@@ -108,3 +108,13 @@ deploy:
   repo: https://github.com/superposed/superposed.github.io.git
   branch: master
 
+# Extensions
+## Plugins: https://hexo.io/plugins/
+#RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
