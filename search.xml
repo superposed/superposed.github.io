@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>MyBatisPlus</title>
+      <link href="/2024/10/22/java/"/>
+      <url>/2024/10/22/java/</url>
+      
+        <content type="html"><![CDATA[<h1 id="MyBatisPlus"><a href="#MyBatisPlus" class="headerlink" title="MyBatisPlus"></a>MyBatisPlus</h1><p>使用MyBatisPlus的基本步骤</p><ol><li>引入MyBatisPlus依赖</li><li>定义Mapper接口并继承BaseMapper</li><li>在实体类上添加注解声明</li><li>在application.yml中添加配置</li></ol><p>MyBatisPlus通过扫描实体类，基于反射获取实体类信息作为数据库表信息 。</p><h2 id="MyBatisPlus约定"><a href="#MyBatisPlus约定" class="headerlink" title="MyBatisPlus约定"></a>MyBatisPlus约定</h2><p>类名驼峰转下划线作为表名<br>名为id的字段作为主键<br>变量名驼峰转下划线作为表的字段名</p><h2 id="MyBatisPlus常用注解"><a href="#MyBatisPlus常用注解" class="headerlink" title="MyBatisPlus常用注解"></a>MyBatisPlus常用注解</h2><p>不符合MyBatisPlus约定可以通过注解进行配置</p><p>@TableName：用来指定表名<br>@Tableld： 用来指定表中的主键字段信息<br>@TableField：用来指定表中的普通字段信息</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@TableName (&quot;tb_user&quot;)</span><br><span class="line">public class User &#123;</span><br><span class="line">@TableId (value=&quot;id&quot;, type= IdType.AUTO )</span><br><span class="line">private Long id;</span><br><span class="line">@TableField (&quot;username&quot;)</span><br><span class="line">private String name;</span><br><span class="line">@TableField(&quot;is_married&quot;)</span><br><span class="line">private Boolean isMarried;</span><br><span class="line">@TableField(&quot;`order`&quot;)</span><br><span class="line">private Integer order;</span><br><span class="line">@TableField(exist = false)</span><br><span class="line">private String address;</span><br></pre></td></tr></table></figure><p><strong>IdType枚举：</strong></p><ul><li>AUTO：数据库自增长</li><li>INPUT：通过set方法自行输入</li><li>ASSIGN_ID：分配 ID，接口ldentifierGenerator的方法nextld来生成id，<br>默认实现类 为DefaultldentifierGenerator雪花算法</li></ul><p><strong>使用@TableField的常见场景：</strong></p><ul><li>成员变量名与数据库字段名不一致</li><li>成员变量名以is开头，且是布尔值</li><li>成员变量名与数据库关键字冲突</li><li>成员变量不是数据库字段</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JAVA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2024 SpiritGame writeup</title>
       <link href="/2024/05/30/2024-SpiritGame-writeup/"/>
       <url>/2024/05/30/2024-SpiritGame-writeup/</url>
@@ -21,33 +46,6 @@
         <tags>
             
             <tag> CTF </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Tags and Categories</title>
-      <link href="/2017/12/24/newpage-1/"/>
-      <url>/2017/12/24/newpage-1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> Baz </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Foo </tag>
-            
-            <tag> Bar </tag>
             
         </tags>
       
